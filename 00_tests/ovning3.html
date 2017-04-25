@@ -7,10 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Övning med textsträngar</title>
   <script>
-    var namn = "Olle";
-    alert(namn.length);
-    for (var i = 0; i < name.length; i++) {
-      alert(namn.charAt(i));
+    var namn = "Otto";
+    namn = namn.toLowerCase();
+    var bakofram = "";
+
+    for (var i = namn.length - 1; i >= 0; i--) {
+      bakofram = bakofram + namn.charAt(i);
+    }
+    alert(namn + " baklänges blir " + bakofram);
+    if (namn == bakofram) {
+      alert(namn + " är ett palindrom");
+    } else {
+      alert(namn + " är inte ett palindrom");
     }
   </script>
 </head>
