@@ -9,19 +9,25 @@
   <script>
     alert("Scriptet kollar om ett namn är ett palindrom");
     var namn = prompt("Skriv in ett namn!");
-    while (namn != null) {
+    while (namn !== null) {
       namn = namn.toLowerCase();
-      var bakofram = "";
-      for (var i = namn.length - 1; i >= 0; i--) {
-        bakofram = bakofram + namn.charAt(i);
+      var fram = 0;
+      var bak = namn.length - 1;
+      var palindrom = true;
+      while (fram <= bak && palindrom) {
+        if (namn.charAt(fram) != namn.charAt(bak)) {
+          palindrom = false;
+        }
+        fram++;
+        bak--;
       }
-      alert(namn + " baklänges blir " + bakofram);
-      if (namn == bakofram) {
+      if (palindrom) {
         alert(namn + " är ett palindrom");
       } else {
         alert(namn + " är inte ett palindrom");
       }
       namn = prompt("Skriv in ett namn!");
+
     }
     alert("Adjö");
   </script>
