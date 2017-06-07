@@ -1,0 +1,31 @@
+body {
+	font: 90% 'Lucida Grande', 'Lucida Sans Unicode', Lucida, Verdana, sans-serif;
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ul#expand-list-tree li {
+	position: relative;
+	margin-left: 20px;
+	padding: 1px;
+}
+ul#expand-list-tree li.closed ul {
+	display: none;
+}
+ul#expand-list-tree a.expander-closed, ul#expand-list-tree a.expander-opened {
+	display: block;
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	top: 0;
+	left: -15px;
+	text-decoration: none;
+}
+ul#expand-list-tree a.expander-closed {
+	background-image: url('expander-closed.png');
+}
+ul#expand-list-tree a.expander-opened {
+	background-image: url('expander-opened.png');
+}
