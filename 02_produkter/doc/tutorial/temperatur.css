@@ -1,0 +1,32 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 3em;
+}
+table {
+    margin-top: 1em;
+    border-collapse: collapse;
+    width: 100%;
+    color: inherit;
+    line-height: 1.2em;
+}
+th, td {
+    padding: 0.5em;
+    text-align: center;
+}
+th {
+    color: #0099CC;
+    border-bottom: 1px solid #0099CC;
+}
+td.stad {
+    font-style: italic;
+}
+td.medel {
+    color: #0099cc;
+}
+tr.emp td {
+    background: rgb(255, 223, 213);
+}
+td.emptd {
+    font-weight: bold;
+    color: #ff3300;
+}
