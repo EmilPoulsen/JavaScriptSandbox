@@ -9,7 +9,12 @@
 <body ng-app="app">
   <div class="container" ng-controller="PostsCtrl">
     <h1>Recent Posts</h1>
-      {{posts[0].body}}
+    <ul class='list-group'>
+      <li ng-repeat='post in posts' class='list-group-item'>
+        <strong>@{{post.username}}</strong>
+        <span>{{post.body}}</span>
+      </li>
+    </ul>
   </div>
   <script>
     var app = angular.module('app', []);
