@@ -1,3 +1,10 @@
 {
-  "name": "socialapp"
+  "name": "socialapp",
+  "description": "a social test app.",
+  "liciense": "yolo.",
+  "repository": "yolo.",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
 }
