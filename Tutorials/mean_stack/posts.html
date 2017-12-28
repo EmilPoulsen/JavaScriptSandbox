@@ -10,6 +10,7 @@
 <body ng-app="app">
   <div class="container" ng-controller="PostsCtrl">
     <h1>Recent Posts</h1>
+    <input ng-model='postBody' class='form-control' />
     <button ng-click='addPost()' class='btn btn-default'>Add Post</button>
 
     <ul class='list-group'>
@@ -20,23 +21,32 @@
     </ul>
   </div>
   <script>
+    //create the app module
     var app = angular.module('app', []);
+    //create the PostCtrl module
+    //dependency inject $scope
     app.controller('PostsCtrl', function($scope) {
+      //function runs when "Add Post" button is clicked
+      $scope.addPost = function() {
+        if ($scope.postBody) { //only add if there is a body
+          $scope.posts.unshift({
+            username: 'dickeyxxx',
+            body: $scope.postBody
+          });
+          $scope.postBody = null; //clear out input field
+        }
+      };
+      //starting data
       $scope.posts = [{
-          username: 'dickeyxxx',
+          username: 'emlplsn1',
           body: 'Node rules!'
         },
         {
-          username: 'jeffdickey',
+          username: 'emlplsn2',
           body: 'Trying out angular!'
         }
       ];
-      $scope.addPost = function() {
-        $scope.posts.unshift({
-          username: 'dickeyxxx',
-          body: 'my new post'
-        });
-      };
+
     });
   </script>
 
