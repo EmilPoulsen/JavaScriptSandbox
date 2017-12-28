@@ -4,32 +4,22 @@
 <head>
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
 
-<body ng-app='app'>
-  <div class="container">
-    <h1>Recent Posts</h1>
-    <div ng-controller='PostsCtrl'>
-        {{posts}}
-    </div>
+<div ng-app="myApp" ng-controller="myCtrl">
 
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js">
-  </script>
-  <script>
-    angular.module('app', [])
-    app.controller('PostsCtrl', function($scope){
-      $scope.posts = [
-        {
-          username: 'dickeyxxx',
-          body: 'Node rules!'
-        },
-        {
-          username: 'jeffdickey',
-          body: 'Trying out angular!'
-        }
-      ]
-    })
-  </script>
+  First Name: <input type="text" ng-model="firstName"><br> Last Name: <input type="text" ng-model="lastName"><br>
+  <br> Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+  });
+</script>
 
 </body>
 
