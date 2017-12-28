@@ -6,29 +6,29 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js">
 </script>
-<body ng-app='app'>
+<body ng-app="app">
   <div class="container">
     <h1>Recent Posts</h1>
-    <div ng-controller='PostsCtrl'>
-        {{posts}}
+    <div ng-controller="PostsCtrl">
+      {{posts}}
     </div>
-
   </div>
-
   <script>
-    angular.module('app', []);
-    app.controller('PostsCtrl', function($scope){
+    var app = angular.module('app', []);
+    app.controller('PostsCtrl', function($scope) {
       $scope.posts = [
-        {
-          username: 'dickeyxxx',
-          body: 'Node rules!'
-        },
-        {
-          username: 'jeffdickey',
-          body: 'Trying out angular!'
-        }
-      ]
+              {
+                username: 'dickeyxxx',
+                body: 'Node rules!'
+              },
+              {
+                username: 'jeffdickey',
+                body: 'Trying out angular!'
+              }
+            ];
     });
+
+
   </script>
 
 </body>
