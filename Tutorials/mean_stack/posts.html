@@ -6,10 +6,11 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js">
 </script>
+
 <body ng-app="app">
   <div class="container" ng-controller="PostsCtrl">
     <h1>Recent Posts</h1>
-<button ng-click='addPost()' class='btn btn-default'>Add Post</button>
+    <button ng-click='addPost()' class='btn btn-default'>Add Post</button>
 
     <ul class='list-group'>
       <li ng-repeat='post in posts' class='list-group-item'>
@@ -21,19 +22,22 @@
   <script>
     var app = angular.module('app', []);
     app.controller('PostsCtrl', function($scope) {
-      $scope.posts = [
-              {
-                username: 'dickeyxxx',
-                body: 'Node rules!'
-              },
-              {
-                username: 'jeffdickey',
-                body: 'Trying out angular!'
-              }
-            ];
+      $scope.posts = [{
+          username: 'dickeyxxx',
+          body: 'Node rules!'
+        },
+        {
+          username: 'jeffdickey',
+          body: 'Trying out angular!'
+        }
+      ];
+      $scope.addPost = function() {
+        $scope.posts.unshift({
+          username: 'dickeyxxx',
+          body: 'my new post'
+        });
+      };
     });
-
-
   </script>
 
 </body>
