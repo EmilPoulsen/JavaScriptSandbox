@@ -1,0 +1,4 @@
+cd .
+mongod --dbpath "any directory path to start your database "
+
+https://stackoverflow.com/questions/41611146/mongoerror-failed-to-connect-to-server-localhost27017-on-first-connect
