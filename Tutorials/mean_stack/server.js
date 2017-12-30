@@ -8,6 +8,10 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+app.get('/', function(req, res){
+  res.sendfile('layouts/posts.html');
+})
+
 app.get('/api/posts', function(req, res, next) {
   Post.find(function(err, posts){
     if(err) {return next(err)}
@@ -15,11 +19,10 @@ app.get('/api/posts', function(req, res, next) {
   });
 });
 
-app.post('/api/posts', function(req, res){
-  //console.log(req.body);
+app.post('/api/posts', function(req, res, next){
   console.log('post received!');
-  console.log(req.body.username);
-  console.log(req.body.body);
+  //console.log(req.body.username);
+  //console.log(req.body.body);
   var post = new Post({
     username: req.body.username,
     body: req.body.body
