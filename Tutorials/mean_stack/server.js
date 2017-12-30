@@ -23,11 +23,10 @@ app.post('/api/posts', function(req, res){
   var post = new Post({
     username: req.body.username,
     body: req.body.body
-  })
+  });
   post.save(function(err,post){
     if(err){
       return next(err);
-      console.log("something went wrong in db call")
     }
     //console.log("saved in db!")
     res.json(201,post);
